@@ -104,11 +104,6 @@ label {
   font-size: 1.5rem;
 }
 
-.grid_1-1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
 .form {
   background-color: rgba(210, 210, 210, 0.718);
   border-radius: 1rem;
@@ -139,5 +134,12 @@ button:hover {
   max-width: 1800px;
   display: grid;
   grid-template-columns: repeat(auto-fill, 400px);
-  gap: 1rem;
+  gap: 2rem;
+}
+
+.grid_1-1-1 {
+  max-width: 1800px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  gap: 2rem;
 }
