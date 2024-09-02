@@ -19,7 +19,7 @@ img:hover {
 
 h1 {
   font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
-  font-size: 8rem;
+  font-size: 6.5rem;
 }
 
 h2 {
@@ -68,19 +68,14 @@ main {
 .kat {
   text-decoration: none;
   color: black;
-  padding: 3rem;
+  padding: 2rem;
   border-radius: 2rem;
   border: solid;
+  margin: 0.5rem;
 }
 
 .kat:hover {
   color: red;
-}
-
-.produktliste {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 1rem;
 }
 
 dl {
@@ -132,4 +127,17 @@ button:hover {
 
 .no-hover:hover {
   color: inherit;
+}
+
+.produktliste {
+  max-width: 1800px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  gap: 1rem;
+}
+
+.r {
+  display: inline-block;
+  color: red;
+  transform: scaleX(-1) translateX(-0.2rem);
 }
