@@ -11,21 +11,23 @@
 <body>
     <header>
         <a class="logo" href="index.html">
-            <h1>Fashion<span>R</span>Us
+            <h1>Fashion<span class="r">R</span>Us
             </h1>
         </a>
     </header>
     <main>
         <h2>Produkter</h2>
-        <template class="produktliste" id="skabelon">
-            <article class="produkt">
-                <a href="produkt.html"><img src="img/1550.webp" alt="Bold"></a>
-                <h3>Gul Puma T4000 bold</h3>
-                <p> <span class="type">Bold</span> | <span class="brand">Puma</span></p>
-                <p> DKK <span class="pris">399</span></p>
-                <a class="rm" href="produkt.html">Read More</a>
-            </article>
-        </template>
+        <div>
+            <template id="skabelon" class="produktliste">
+                <article>
+                    <a href="produkt.html"><img src="img/1550.webp" alt="Bold"></a>
+                    <h3>Gul Puma T4000 bold</h3>
+                    <p> <span class="type">Bold</span> | <span class="brand">Puma</span></p>
+                    <p> DKK <span class="pris">399</span></p>
+                    <a class="rm" href="produkt.html">Read More</a>
+                </article>
+            </template>
+        </div>
         <!-- <article class="produkt paaTilbud">
                 <a href="produkt.html"><img src="img/1551.webp" alt="Bold"></a>
                 <h3>Orange Puma T4000 bold</h3>
@@ -47,7 +49,6 @@
                 <p class="pris"> DKK 399</p>
                 <a class="rm" href="produkt.html">Read More</a>
             </article> -->
-        </div>
     </main>
     <footer></footer>
     <script src="produktliste.js"></script>
