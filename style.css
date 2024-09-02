@@ -1,0 +1,135 @@
+/*************** Reset *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: solid;
+  border-radius: 1rem;
+}
+
+img:hover {
+  color: red;
+}
+
+h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+  font-size: 8rem;
+}
+
+h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+
+h3 {
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+}
+
+a {
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+  font-size: 2rem;
+  color: black;
+}
+
+.rm:hover {
+  color: red;
+}
+
+p {
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+}
+
+header {
+  margin: 5rem;
+}
+
+main {
+  margin: 1.5rem;
+}
+
+.logo {
+  text-decoration: none;
+  color: black;
+}
+
+.kategori-liste {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.kat {
+  text-decoration: none;
+  color: black;
+  padding: 3rem;
+  border-radius: 2rem;
+  border: solid;
+}
+
+.kat:hover {
+  color: red;
+}
+
+.produktliste {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+dl {
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+  font-size: 1.5rem;
+}
+
+dt {
+  font-weight: bold;
+}
+
+img {
+  width: 400px;
+}
+
+label {
+  padding-top: 1rem;
+  display: flex;
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+  font-size: 1.5rem;
+}
+
+.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.form {
+  background-color: rgba(210, 210, 210, 0.718);
+  border-radius: 1rem;
+  width: 400px;
+  line-height: 2rem;
+  padding: 2rem;
+}
+
+button {
+  border-radius: 1rem;
+  border: solid;
+  padding: 1rem;
+  background-color: rgba(210, 210, 210, 0);
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+  font-size: 1.5rem;
+  place-items: center;
+}
+
+button:hover {
+  color: red;
+}
+
+.no-hover:hover {
+  color: inherit;
+}
