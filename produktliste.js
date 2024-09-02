@@ -20,6 +20,8 @@ function visProdukt(produkt) {
   kopi.querySelector(".pris").textContent = produkt.price;
   //   kopi.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${produkt.id}.webp;`;
   // document.querySelector("img").alt = `Image of ${json.productdisplayname}`;
+  kopi.querySelector("a").href = produkt.html?id=${produkt.id};"
+  
   if (produkt.soldout) {
     //produkt er udsolgt. JavaScript ved at 1 er sandt og 0 er falsk
     kopi.querySelector("article").classList.add("udsolgt");
