@@ -146,7 +146,6 @@ button:hover {
 }
 
 /*_____________________________*/
-/*DETTE GÅR MULIGVIS GALT!!!!!!*/
 
 article.udsolgt img {
   opacity: 0.3; /* Gør billeder i udsolgte artikler halvgennemsigtige */
@@ -189,4 +188,12 @@ article.tilbud .procentLabel {
   padding: 0.2rem; /*Indvendig afstand på 0.2rem*/
   color: black;
   border-radius: 0.5rem;
+}
+
+/* Når begge klasser er på */
+article.udsolgt.tilbud p {
+  opacity: 0.3;
+}
+article.udsolgt.tilbud h3 {
+  opacity: 0.3;
 }

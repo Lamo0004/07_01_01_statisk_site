@@ -6,6 +6,12 @@ fetch("https://kea-alt-del.dk/t7/api/products?limit=50&category=" + category)
   .then((svar) => svar.json())
   .then(visProdukter); //Kunne også have set sådan ud: (data) => visProdukter(data)
 
+if (params.has("category")) {
+  url = `https://kea-alt-del.dk/t7/api/products?category=${category}`;
+} else {
+  url = "https://kea-alt-del.dk/t7/api/products";
+}
+
 function visProdukter(produkter) {
   // Looper og kalder funktionen visProdukt
   produkter.forEach(visProdukt); //Kunne også have set sådan ud: (produkt) => visProdukt(produkt)
