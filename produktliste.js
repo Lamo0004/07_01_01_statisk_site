@@ -1,4 +1,8 @@
-fetch("https://kea-alt-del.dk/t7/api/products?limit=50")
+const urlParams = new URLSearchParams(window.location.search);
+const category = urlParams.get("category");
+let url = undefined;
+
+fetch("https://kea-alt-del.dk/t7/api/products?limit=50&category=" + category)
   .then((svar) => svar.json())
   .then(visProdukter); //Kunne også have set sådan ud: (data) => visProdukter(data)
 
@@ -18,19 +22,23 @@ function visProdukt(produkt) {
   kopi.querySelector("h3").textContent = produkt.productdisplayname;
   kopi.querySelector(".type").textContent = produkt.articletype;
   kopi.querySelector(".brand").textContent = produkt.brandname;
-  kopi.querySelector(".pris").textContent = produkt.price;
+  kopi.querySelector(".pris span").textContent = produkt.price;
   // Hvis produktet er udsolgt
-  if (produkt.udsolgt) {
+  if (produkt.soldout) {
     //JaveScript ved at 1 er sandt og 0 er sandt
     kopi.querySelector("article").classList.add("udsolgt");
   }
   // Hvis produktet er på tilbud
-  if (produkt.paaTilbud) {
-    //JaveScript ved at 1 er sandt og 0 er sandt
-    kopi.querySelector("article").classList.add("paaTilbud");
+  if (produkt.discount) {
+    //JaveScript ved at alt andet end null er sandt
+    kopi.querySelector("article").classList.add("tilbud");
+    kopi.querySelector(".tilbud .nuTekst span").textContent = Math.round(produkt.price - (produkt.price * produkt.discount) / 100);
+    kopi.querySelector(".tilbud .procentLabel span").textContent = produkt.discount;
   }
   //Ændre Read More link
   kopi.querySelector(".rm").setAttribute("href", `produkt.html?id=${produkt.id}`);
+  //Ændre IMG link
+  kopi.querySelector(".img_link").setAttribute("href", `produkt.html?id=${produkt.id}`);
   //Appende til DOM'en
   document.querySelector("main").appendChild(kopi);
 }

@@ -65,16 +65,17 @@ main {
   transform: scaleX(-1) translateX(-0.2rem);
 }
 
-.kategori-liste {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 3rem;
+.kategoriListe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .kat {
   text-decoration: none;
   color: black;
-  padding: 2rem;
+  padding-inline: 4rem;
+  padding-block: 2rem;
   border-radius: 2rem;
   border: solid;
   margin: 0.5rem;
@@ -142,4 +143,50 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, 400px);
   gap: 2rem;
+}
+
+/*_____________________________*/
+/*DETTE GÅR MULIGVIS GALT!!!!!!*/
+
+article.udsolgt img {
+  opacity: 0.3; /* Gør billeder i udsolgte artikler halvgennemsigtige */
+}
+
+article.udsolgt::before {
+  /* Tilføjer en "UDSOLGT"-etiket foran indholdet af udsolgte artikler */
+  content: "UDSOLGT";
+  font-size: 3rem;
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+  position: absolute; /*Placere etiketten ovenpå det andet indhold */
+  margin-block: 15rem; /*Placering af etiketten midt på billeder – nok ikke den rigtige måde at gøre det på */
+  margin-inline: 5rem; /*Placering af etiketten midt på billeder – nok ikke den rigtige måde at gøre det på */
+  background: grey; /* Grå baggrund for etiketten */
+  color: red; /* Rød tekst farve */
+  border-radius: 1rem; /* Runde hjørner */
+  padding: 1rem; /* Afstand rundt om teksten */
+}
+
+article.udsolgt .pris {
+  text-decoration: line-through; /* Gennemstregning af prisen */
+  color: red; /* Rød tekstfarve */
+}
+
+article .tilbud {
+  display: none; /* Skjuler klassen "tilbud" som standard */
+}
+
+article.tilbud .tilbud {
+  display: flex; /* Gør tilbudssektionen til en fleksibel container */
+  justify-content: space-between; /* Fordeler pladsen mellem elementerne jævnt */
+  color: greenyellow;
+  font-weight: 800;
+  font-size: 1.4rem;
+}
+
+/* Giver det sidste afsnit i et "tilbud"-element en lysegrøn baggrund og lidt padding */
+article.tilbud .procentLabel {
+  background: greenyellow; /* Lysegrøn baggrund*/
+  padding: 0.2rem; /*Indvendig afstand på 0.2rem*/
+  color: black;
+  border-radius: 0.5rem;
 }
