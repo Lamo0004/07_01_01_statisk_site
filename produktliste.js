@@ -4,7 +4,8 @@ let url = undefined;
 
 //Hvis der bliver klikket på en kategori, laver den en url med dette. Ellers så tager den tage url products
 if (urlParams.has("category")) {
-  url = `https://kea-alt-del.dk/t7/api/products?category=${category}`;
+  url = `https://kea-alt-del.dk/t7/api/products?category=${category}&limit=20`;
+  document.querySelector("h2").textContent = category; //Ændre sidens overskrift alt efter kategorien
 } else {
   url = "https://kea-alt-del.dk/t7/api/products";
 }

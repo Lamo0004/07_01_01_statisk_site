@@ -15,4 +15,18 @@ function visProdukt(produkt) {
   document.querySelector(".info .season").textContent = produkt.season;
   document.querySelector(".info .farve").textContent = produkt.basecolour;
   document.querySelector(".info .aar").textContent = produkt.productionyear;
+
+  // Hvis produktet er udsolgt
+  if (produkt.soldout) {
+    document.querySelector("img").classList.add("udsolgtImg");
+    document.querySelector(".grid_1-1-1").classList.add("udsolgtTekst");
+    document.querySelector("button").classList.add("no-hover");
+  }
+
+  // Hvis produktet er på tilbud
+  if (produkt.discount) {
+    document.querySelector(".grid_1-1-1").classList.add("tilbudForm");
+    document.querySelector(".tilbudForm .nuTekst span").textContent = Math.round(produkt.price - (produkt.price * produkt.discount) / 100);
+    document.querySelector(".tilbudForm .procentLabel span").textContent = produkt.discount;
+  }
 }

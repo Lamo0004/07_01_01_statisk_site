@@ -153,6 +153,7 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, 400px);
   gap: 2rem;
+  position: relative;
 }
 
 .index {
@@ -161,10 +162,20 @@ button:hover {
   gap: 2rem;
 }
 
-/*_____________________________*/
+.overskrift {
+  margin: 1.5rem;
+}
 
-article.udsolgt img {
-  opacity: 0.3; /* Gør billeder i udsolgte artikler halvgennemsigtige */
+/*_____________________________*/
+article.udsolgt p {
+  opacity: 0.3;
+}
+article.udsolgt h3 {
+  opacity: 0.3;
+}
+
+article.udsolgt a {
+  opacity: 0.3;
 }
 
 article.udsolgt::before {
@@ -179,11 +190,6 @@ article.udsolgt::before {
   color: red; /* Rød tekst farve */
   border-radius: 1rem; /* Runde hjørner */
   padding: 1rem; /* Afstand rundt om teksten */
-}
-
-article.udsolgt .pris {
-  text-decoration: line-through; /* Gennemstregning af prisen */
-  color: red; /* Rød tekstfarve */
 }
 
 article .tilbud {
@@ -206,10 +212,40 @@ article.tilbud .procentLabel {
   border-radius: 0.5rem;
 }
 
-/* Når begge klasser er på */
-article.udsolgt.tilbud p {
+/* Side med enkelt produkt */
+.udsolgtImg {
   opacity: 0.3;
 }
-article.udsolgt.tilbud h3 {
-  opacity: 0.3;
+
+.grid_1-1-1.udsolgtTekst::before {
+  /* Tilføjer en "UDSOLGT"-etiket foran indholdet af udsolgte artikler */
+  content: "UDSOLGT";
+  font-size: 3rem;
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+  position: absolute; /*Placere etiketten ovenpå det andet indhold */
+  margin-block: 15rem; /*Placering af etiketten midt på billeder – nok ikke den rigtige måde at gøre det på */
+  margin-inline: 5rem; /*Placering af etiketten midt på billeder – nok ikke den rigtige måde at gøre det på */
+  background: grey; /* Grå baggrund for etiketten */
+  color: red; /* Rød tekst farve */
+  border-radius: 1rem; /* Runde hjørner */
+  padding: 1rem; /* Afstand rundt om teksten */
+}
+
+.grid_1-1-1 .tilbudForm {
+  display: none; /* Skjuler klassen "tilbudForm" som standard */
+}
+
+.grid_1-1-1.tilbudForm .tilbudForm {
+  display: flex; /* Gør tilbudssektionen til en fleksibel container */
+  justify-content: space-between; /* Fordeler pladsen mellem elementerne jævnt */
+  color: greenyellow;
+  font-weight: 800;
+  font-size: 1.4rem;
+}
+
+section .tilbudForm .procentLabel {
+  background: greenyellow; /*Lysegrøn baggrund*/
+  padding: 0.2rem; /*Indvendig afstand på 0.2rem */
+  color: black;
+  border-radius: 0.5rem;
 }
