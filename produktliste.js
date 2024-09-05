@@ -1,16 +1,17 @@
-const urlParams = new URLSearchParams(window.location.search);
+const urlParams = new URLSearchParams(document.location.search);
 const category = urlParams.get("category");
 let url = undefined;
 
-fetch("https://kea-alt-del.dk/t7/api/products?limit=20&category=" + category)
+//Hvis der bliver klikket på en kategori, laver den en url med dette. Ellers så tager den tage url products
+if (urlParams.has("category")) {
+  url = `https://kea-alt-del.dk/t7/api/products?category=${category}`;
+} else {
+  url = "https://kea-alt-del.dk/t7/api/products";
+}
+
+fetch(url)
   .then((svar) => svar.json())
   .then(visProdukter); //Kunne også have set sådan ud: (data) => visProdukter(data)
-
-// if (params.has("category")) {
-//   url = `https://kea-alt-del.dk/t7/api/products?category=${category}`;
-// } else {
-//   url = "https://kea-alt-del.dk/t7/api/products";
-// }
 
 function visProdukter(produkter) {
   // Looper og kalder funktionen visProdukt
